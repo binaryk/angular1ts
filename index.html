@@ -5,7 +5,7 @@
     <title>MainTS</title>
     <link rel="stylesheet" href="bower_components\bootstrap\dist\css\bootstrap.min.css">
 </head>
-<body ng-app="productManager">
+<body ng-app="productManagement">
     
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -18,13 +18,24 @@
     </nav>
     
     <div class="container">
-        <div ng-include="app/products/productListView.html"></div>
+        <ng-view></ng-view>
     </div>
-    
-    <script src="main.js"></script>
+
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-resource/angular-resource.min.js"></script>
     <script src="bower_components/angular-mocks/angular-mocks.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
+
+    <!--Application script-->
+    <script src="app/app.js"></script>
+    <!--Domain Classes-->
+    <script src="app/products/product.js"></script>
+    <!--Services-->
+    <script src="app/common/services/common.service.js"></script>
+    <script src="app/common/services/dataAccessService.js"></script>
+    <script src="app/common/services/productResourceMock.js"></script>
+    <!--Controllers-->
+    <script src="app/products/productListCtrl.js"></script>
+    <script src="app/products/productDetailCtrl.js"></script>
 </body>
 </html>
